@@ -18,16 +18,19 @@
 
 <link rel="import" href="../../bower_components/app-layout/app-layout.html">
 <link rel="import" href="../../bower_components/transburger-icon/transburger-icon.html"> 
+<link rel="import" href="../../bower_components/social-media-icons/social-media-icons.html">
 
 <link rel="import" href="ll-nav.html">
 <link rel="import" href="ll-home.html">
 <link rel="import" href="ll-contact.html">
 <link rel="import" href="ll-services.html">
 <link rel="import" href="ll-about.html">
+<link rel="import" href="ll-footer.html">
 
 <dom-module id="ll-app">
 
   <template>
+    <style include="slate-font-awesome"></style>
     <style is="custom-style">
       :host {
         display: block;
@@ -37,17 +40,16 @@
         top: 17vh;
         position: fixed;
         height: calc(100vh - 18vh);
-        background: red;
         width: calc(100vw - 1vw);
       }
     </style>
 
-     <ll-nav 
-     name="ll-nav"
-     page="{{page}}">
-     </ll-nav>
+    <ll-nav 
+    name="ll-nav"
+    page="{{page}}">
+    </ll-nav>
      
-     <div class="page">
+    <div class="page">
       <template is="dom-if" if="[[_isHome(page)]]">
         <ll-home name="ll-home"></ll-home>
       </template>
@@ -64,6 +66,7 @@
         <ll-services name="ll-services"></ll-services>
       </template>
     </div>
+
   </template>
 
   <script>
