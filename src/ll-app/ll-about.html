@@ -7,6 +7,10 @@
         
       }
 
+      .banner{
+        width: calc(100% - 10vw);
+      }
+
       .panel{
         width: calc(100% - 10vw);
         /*background: var(--ll-light-border);*/
@@ -46,12 +50,29 @@
       .pink{
         background: var(--ll-pink);
       }
+
+      .bannerimg{
+        width: 100vw;
+      }
+
+      @media screen and (max-width : 760px){
+        .imgcontainer{
+          clear: both;
+          width: 100%;
+        }
+      }
     </style>
     
+    <div class="banner">
+      <img 
+      src="../../img/city_banner_2.jpg"
+      class="bannerimg">
+    </div>
+
     <div class="panel">
       <div class="title">About Us</div>
       <div>
-        L Squared Social specializes in social media advertising and marketing. We want to help you grow your business to its full potential. Our specialty is optimizing toward reach, gaining the most impact, and maximizing your budget in order to drive the best results. All you have to do is square in on your niche and L Squared Social will monetize your brand!
+        L Squared Social specializes in social media advertising and marketing. We want to help you grow your business to its full potential. We are a full-service social media marketing agency located in the heart of New York City. Our specialty is optimizing toward reach, gaining the most impact, and maximizing your budget in order to drive the best results. All you have to do is square in on your niche and L Squared Social will monetize your brand!
       </div>
     </div>
 
@@ -62,7 +83,7 @@
       <div class="imgcontainer">
         <div class="title">Lexi Levy</div>
         <div class="subtitle">Founder & Social Media Manager</div>
-        <div>
+        <div class="paneltext">
           Meet Lexi, she is an outgoing, forward-thinking, New York native. With a Paid Social background and a passion for all things social, Lexi knew she had to turn her obsession with social networking into more than just a hobby. She lives and breathes hashtags, filters, and captions and saw a need to use these unique tactics as business strategies. Beauty, Fashion, Fitness, Travel, and Lifestyle are not only some of Lexi’s interests, but also industries she is passionate about taking part in. Just as connecting all of her inner circles has always brought her immense joy, she loves to be able to do the same for your brand by pairing clients with services that will allow them to flourish.
         </div>
       </div>
