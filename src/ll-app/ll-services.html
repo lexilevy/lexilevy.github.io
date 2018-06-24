@@ -1,0 +1,71 @@
+<link rel="import" href="../shared-styles/page-shared-styles.html">
+<dom-module id="ll-services">
+  <template>
+    <style include="page-shared-styles"></style>
+    <style is="custom-style">
+      :host {
+        
+      }
+    </style>
+    SERIVCES
+    SERIVCES
+    SERIVCES
+    SERIVCES
+    SERIVCES
+    SERIVCES
+    SERIVCES
+    SERIVCES
+    SERIVCES
+    SERIVCES
+    SERIVCES
+    SERIVCES
+    SERIVCES
+    SERIVCES
+  </template>
+
+  <script>
+    class LlServices extends Polymer.Element {
+      
+      static get is() { return 'll-services'; }
+      
+      static get properties() {
+        return {
+          title: {
+            type: String
+          },
+
+        };
+      }
+
+      ready(){    
+        var self = this;  
+        
+        super.ready();
+
+        this._addSubscribers();
+
+      }
+
+      connectedCallback(){
+        super.connectedCallback();
+        console.log(this.getAttribute("name") + " connected");
+      }
+
+      _addSubscribers(){
+        var self = this;
+        // $.subscribe("setLoadingText", function(event, data) {
+        //     self.loadingText = data;
+        // });
+
+      }
+
+      
+     
+    }
+
+
+
+
+    window.customElements.define(LlServices.is, LlServices);
+  </script>
+</dom-module>

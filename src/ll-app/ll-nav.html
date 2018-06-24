@@ -1,0 +1,332 @@
+<dom-module id="ll-nav">
+  <template>
+    <style is="custom-style">
+      
+      :host {
+        display: block;
+        width: 100%;
+        position: relative;
+        height: 16vh;
+        background: var(--ll-white);
+        margin: 0 !important;
+        padding: 0 !important;
+        top: 0;
+        right: 0;
+      }
+
+      .navbar{
+        width: 100%;
+        height: 100%;
+      }
+
+      paper-button.logobutton{
+        max-height: 16vh;
+        display: table;
+        z-index: 2;
+      }
+
+     /* paper-button.logobutton:hover{
+        color: var(--ll-light-blue);
+      }*/
+
+      img.logoimg{
+        height: 12.5vh;
+        width: calc(12.5vh * 1.15);
+        position: relative;
+        vertical-align: middle;
+      }
+
+      .logotext{
+        font-family: IBMLight;
+        font-size: 1.75em;
+        vertical-align: middle;
+        letter-spacing: -1.5px;
+        height: 1.75em;
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      span.bold{
+        font-family: IBMBold;
+      }
+
+      .controlsleft{
+        display: inline-block;
+        float: left;
+      }
+
+      .controlsdiv{
+        display: inline-block;
+        float: right;
+        margin-top: 4vh;
+        height: 8vh;
+      }
+
+      paper-button.controlbutton{
+        color: var(--ll-black);
+        -webkit-transition: all 350ms ease;
+        -moz-transition: all 350ms ease;
+        -ms-transition: all 350ms ease;
+        -o-transition: all 350ms ease;
+        transition: all 350ms ease;
+      }
+
+      paper-button.controlbutton:hover{
+        color: var(--ll-light-blue);
+        -webkit-transition: all 350ms ease;
+        -moz-transition: all 350ms ease;
+        -ms-transition: all 350ms ease;
+        -o-transition: all 350ms ease;
+        transition: all 350ms ease;
+      }
+
+      .controlbuttondiv{
+        font-family: IBMRoman;
+        text-transform: none;
+        font-size: 1.125em;
+      }
+
+      .mobileleft{
+        display: none;
+      }
+
+      transburger-icon.menubutton{
+        z-index: 2;
+        position: fixed;
+        height: 6vh;
+        margin-top: calc(((16vh - 6vh) / 2) + 4px);
+        left: 1.5vw;
+      }
+
+      app-drawer.appdrawer{
+        z-index: 1;
+        --app-drawer-width: 100vw;
+        --app-drawer-scrim-background: transparent;
+        --app-drawer-content-container:{
+          background: var(--ll-white);
+        };
+      }
+
+      div.drawerdiv{
+        width: 100%;
+        margin-top: 16vh;
+        height: calc(100% - 16vh);
+        text-align: center;
+      }
+
+      paper-button.block{
+        display: block !important;
+      }
+
+      /*Responsive Styles*/
+      @media screen and (max-width : 760px){
+          /*Hide original nav bar for mobile */
+          .controlsdiv{
+            display: none;
+          }
+          paper-button.logobutton{
+            
+          }
+          .logotext{
+           
+          }
+          .navbar{
+            text-align: center;
+          }
+          .controlsleft{
+            float: none;
+          }
+
+          .mobileleft{
+            display: inline-block;
+            float: left;
+          }
+
+      }
+
+      @media screen and (max-width : 600px){
+          .navbar{
+            text-align: center;
+          }
+
+          .controlsleft{
+            float: none;
+          }
+
+          paper-button.logobutton{
+            height: 16vh;
+          }
+
+          img.logoimg{
+            height: 6.5vh;
+            width: calc(6.5vh * 1.15);
+          }
+
+          .logotext{
+            font-size: 1.25em;
+            height: 100%;
+          }
+      }
+
+    </style>
+
+    <app-drawer 
+    id="drawer" 
+    disableSwipe
+    class="appdrawer">
+      <div class="drawerdiv">
+
+        <paper-button 
+        class="controlbutton block"
+        on-tap="_selectPage"
+        page="home">
+          <div class="controlbuttondiv">Home</div>
+        </paper-button>
+
+        <paper-button 
+        class="controlbutton block"
+        on-tap="_selectPage"
+        page="about">
+          <div class="controlbuttondiv">About</div>
+        </paper-button>
+
+        <paper-button 
+        class="controlbutton block"
+        on-tap="_selectPage"
+        page="services">
+          <div class="controlbuttondiv">Services</div>
+        </paper-button>
+
+        <paper-button 
+        class="controlbutton block"
+        on-tap="_selectPage"
+        page="contact">
+          <div class="controlbuttondiv">Contact</div>
+        </paper-button>
+      </div>
+    </app-drawer>
+
+    <div class="navbar">
+
+      <div class="mobileleft">
+        <transburger-icon
+        id="burgericon"
+        class="menubutton"
+        on-tap="_toggleDrawer"
+        on-click="_toggleDrawer">
+        </transburger-icon>
+      </div>
+
+      <div class="controlsleft">
+        <paper-button
+        class="logobutton"
+        noink>
+
+          <div class="logotext"> 
+            <img 
+            src="../../img/logo_notext.png"
+            class="logoimg">
+            <span class="bold">L Squared</span> Social
+          </div>
+
+        </paper-button>
+      </div>
+
+      <div class="controlsdiv">
+        
+        <paper-button 
+        class="controlbutton"
+        on-tap="_selectPage"
+        page="home">
+          <div class="controlbuttondiv">Home</div>
+        </paper-button>
+
+        <paper-button 
+        class="controlbutton"
+        on-tap="_selectPage"
+        page="about">
+          <div class="controlbuttondiv">About</div>
+        </paper-button>
+
+        <paper-button 
+        class="controlbutton"
+        on-tap="_selectPage"
+        page="services">
+          <div class="controlbuttondiv">Services</div>
+        </paper-button>
+
+        <paper-button 
+        class="controlbutton"
+        on-tap="_selectPage"
+        page="contact">
+          <div class="controlbuttondiv">Contact</div>
+        </paper-button>
+
+      </div>
+      
+    </div>
+
+  </template>
+
+  <script>
+    class LlNav extends Polymer.Element {
+      
+      static get is() { return 'll-nav'; }
+      
+      static get properties() {
+        return {
+          page: {
+            notify: true
+          },
+        };
+      }
+
+      ready(){    
+        var self = this;  
+        
+        super.ready();
+
+        this._addSubscribers();
+
+        this.set("page","home");
+      }
+
+      connectedCallback(){
+        super.connectedCallback();
+        console.log(this.getAttribute("name") + " connected");
+      }
+
+      _addSubscribers(){
+        var self = this;
+        // $.subscribe("setLoadingText", function(event, data) {
+        //     self.loadingText = data;
+        // });
+
+      }
+
+      _selectPage(e){
+        var page = e.target.getAttribute("page") ? e.target.getAttribute("page") : e.target.parentElement.getAttribute("page");
+
+        this.set("page",page)
+
+        if(this.$.drawer.opened){
+          this.$.burgericon.toggleIcon();
+          this.$.drawer.close(); 
+        }
+      }
+
+
+      _toggleDrawer(){        
+        this.$.drawer.toggle(); 
+      }
+
+      
+     
+    }
+
+
+
+
+    window.customElements.define(LlNav.is, LlNav);
+  </script>
+</dom-module>
