@@ -40,7 +40,7 @@
       img.panelimg{
         width: 20vw;
         display: inline-block;
-        float: left;
+        vertical-align: middle;
       }
 
       img.panelimgright{
@@ -49,13 +49,21 @@
 
       .imgcontainer{
         display: inline-block;
-        float: left;
         padding: 2vh 2vw;
-        width: calc(100% - 45vw);
+        width: calc(100% - 25vw);
+        vertical-align: middle;
       }
 
       .pink{
         background: var(--ll-pink);
+      }
+
+      img.mobile{
+        display: none;
+      }
+
+      li.item{
+        margin-bottom: 1em;
       }
       
       @media screen and (max-width : 760px){
@@ -72,7 +80,7 @@
           display: none;
         }
         img.mobile{
-          display: : inline-block;
+          display: inline-block;
         }
         .title{
           text-align: center;
@@ -93,10 +101,10 @@
       <div class="imgcontainer">
         <div class="title">Custom Content Creation</div>
         <div class="paneltext">
-          <li>Develop and publish original content that aligns with your business goals</li>
-          <li>Increase brand visibility through unique story-telling on your social media platform of choice</li>
-          <li>Establish loyalty and engagement with existing customers</li>
-          <li>Draw in prospects by identifying proper audience targets for social campaigns</li>
+          <li class="item">Develop and publish original content that aligns with your business goals</li>
+          <li class="item">Increase brand visibility through unique story-telling on your social media platform of choice</li>
+          <li class="item">Establish loyalty and engagement with existing customers</li>
+          <li class="item">Draw in prospects by identifying proper audience targets for social campaigns</li>
         </div>
       </div>
     </div>
@@ -108,10 +116,10 @@
       <div class="imgcontainer">
         <div class="title">Social Media Advertising</div>
         <div class="paneltext">
-          <li>Ad creation on any social platform in order to drive new leads and attract new consumers</li>
-          <li>Ad tracking and optimization to improve efficiency and drive the best results</li>
-          <li>Maximizing your budget with cost-effective paid social campaigns</li>
-          <li>Retargeting ads to people who’ve already expressed interest in your business or create lookalike audiences</li>
+          <li class="item">Ad creation on any social platform in order to drive new leads and attract new consumers</li>
+          <li class="item">Ad tracking and optimization to improve efficiency and drive the best results</li>
+          <li class="item">Maximizing your budget with cost-effective paid social campaigns</li>
+          <li class="item">Retargeting ads to people who’ve already expressed interest in your business or create lookalike audiences</li>
         </div>
       </div>
       <img 
@@ -126,9 +134,9 @@
       <div class="imgcontainer">
         <div class="title">Business Consulting</div>
         <div class="paneltext">
-          <li>In person or phone meetings to establish your KPIs, business goals, and social media strategy</li>
-          <li>Future campaign recommendations based on current statistical findings within your industry</li>
-          <li>Optional weekly check-ins to discuss timeline progress</li>
+          <li class="item">In person or phone meetings to establish your KPIs, business goals, and social media strategy</li>
+          <li class="item">Future campaign recommendations based on current statistical findings within your industry</li>
+          <li class="item">Optional weekly check-ins to discuss timeline progress</li>
         </div>
       </div>
     </div>
@@ -140,9 +148,9 @@
       <div class="imgcontainer">
         <div class="title">Success Tracking</div>
         <div class="paneltext">
-          <li>Daily monitoring of audience activity on all social media platforms</li>
-          <li>Bi-weekly or bi-monthly presentations that include campaign data reports</li>
-          <li>Plan your social content calendar based on successful reports</li>
+          <li class="item">Daily monitoring of audience activity on all social media platforms</li>
+          <li class="item">Bi-weekly or bi-monthly presentations that include campaign data reports</li>
+          <li class="item">Plan your social content calendar based on successful reports</li>
         </div>
       </div>
       <img 
