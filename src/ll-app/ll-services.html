@@ -6,21 +6,129 @@
       :host {
         
       }
+
+      .banner{
+        width: calc(100% - 10vw);
+      }
+
+      .bannerimg{
+        width: 100vw;
+      }
+
+      .panel{
+        width: calc(100% - 10vw);
+        /*background: var(--ll-light-border);*/
+        font-family: IBMRoman;
+        padding: 5vh 5vw;
+        line-height: 2em;
+        font-size: 1em;
+        display: inline-block;
+      }
+
+      .title{
+        display: block;
+        font-family: IBMBold;
+        margin: 2vh 0;
+        font-size: 1.75em;
+      }
+
+      .subtitle{
+        font-family: IBMRomanItalic;
+        margin-bottom: 2vw;
+      }
+
+      img.panelimg{
+        width: 20vw;
+        display: inline-block;
+        float: left;
+      }
+
+      img.panelimgright{
+        float: right;
+      }
+
+      .imgcontainer{
+        display: inline-block;
+        float: left;
+        padding: 2vh 2vw;
+        width: calc(100% - 45vw);
+      }
+
+      .pink{
+        background: var(--ll-pink);
+      }
+      
     </style>
-    SERIVCES
-    SERIVCES
-    SERIVCES
-    SERIVCES
-    SERIVCES
-    SERIVCES
-    SERIVCES
-    SERIVCES
-    SERIVCES
-    SERIVCES
-    SERIVCES
-    SERIVCES
-    SERIVCES
-    SERIVCES
+
+    <div class="banner">
+      <img 
+      src="../../img/services_banner.jpg"
+      class="bannerimg">
+    </div>
+
+    <div class="panel">
+      <img 
+      src="../../img/services_1.png"
+      class="panelimg">
+      <div class="imgcontainer">
+        <div class="title">Custom Content Creation</div>
+        <div class="paneltext">
+          <li>Develop and publish original content that aligns with your business goals</li>
+          <li>Increase brand visibility through unique story-telling on your social media platform of choice</li>
+          <li>Establish loyalty and engagement with existing customers</li>
+          <li>Draw in prospects by identifying proper audience targets for social campaigns</li>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel pink">
+      <div class="imgcontainer">
+        <div class="title">Social Media Advertising</div>
+        <div class="paneltext">
+          <li>Ad creation on any social platform in order to drive new leads and attract new consumers</li>
+          <li>Ad tracking and optimization to improve efficiency and drive the best results</li>
+          <li>Maximizing your budget with cost-effective paid social campaigns</li>
+          <li>Retargeting ads to people who’ve already expressed interest in your business or create lookalike audiences</li>
+        </div>
+      </div>
+      <img 
+      src="../../img/services_2.png"
+      class="panelimg right">
+    </div>
+
+    <div class="panel">
+      <img 
+      src="../../img/services_4.png"
+      class="panelimg">
+      <div class="imgcontainer">
+        <div class="title">Business Consulting</div>
+        <div class="paneltext">
+          <li>In person or phone meetings to establish your KPIs, business goals, and social media strategy</li>
+          <li>Future campaign recommendations based on current statistical findings within your industry</li>
+          <li>Optional weekly check-ins to discuss timeline progress</li>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel pink">
+      <div class="imgcontainer">
+        <div class="title">Success Tracking</div>
+        <div class="paneltext">
+          <li>Daily monitoring of audience activity on all social media platforms</li>
+          <li>Bi-weekly or bi-monthly presentations that include campaign data reports</li>
+          <li>Plan your social content calendar based on successful reports</li>
+        </div>
+      </div>
+      <img 
+      src="../../img/services_3.png"
+      class="panelimg right">
+    </div>
+
+
+    <ll-footer
+    name="ll-footer">
+    </ll-footer>
+
   </template>
 
   <script>
