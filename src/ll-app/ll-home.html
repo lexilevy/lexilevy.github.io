@@ -84,8 +84,11 @@
 
       /*Responsive Styles*/
       @media screen and (max-width : 760px){
+        div.container{
+          height: 90vh;
+        }
         l2t-paper-slider.custom{
-          --paper-slide-height: 60vh;
+          --paper-slide-height: 75vh;
           --paper-slide-dot: transparent;
           --paper-slide-dot-selected: transparent;
         }
@@ -99,11 +102,11 @@
         }
 
         div.quote{
-          font-size: 1em;
+          font-size: .75em;
         }
 
         div.author{
-          font-size: .85em;
+          font-size: .65em;
         }
 
         div.title{
@@ -114,7 +117,7 @@
 
     <div class="container">
       <div class="title">What Our Clients Say...</div>
-      <l2t-paper-slider auto-progress disable-swipe slide-duration="15" class="custom" total-slides="3">
+      <l2t-paper-slider auto-progress disable-swipe slide-duration="10" class="custom" total-slides="3">
         
         <paper-slide class="slide">
           <div class="slidecontainer">
@@ -127,9 +130,11 @@
               <div class="author">
                 Terrie Magro (Co-Founder, <a class="companylink" href="www.michaelmagrofoundation.com">The Michael Magro Foundation</a>)
               </div>
-              <img 
-              src="../../img/michael_margo.png"
-              class="companyimg">
+              <a class="companylink" href="www.michaelmagrofoundation.com">
+                <img 
+                src="../../img/michael_margo.png"
+                class="companyimg">
+              </a>
             </div>
           </div>
         </paper-slide>
@@ -145,9 +150,11 @@
               <div class="author">
                 Evan Samlin (Director of Operations, <a class="companylink" href="www.reilcap.com">REIL Capital</a>)
               </div>
-              <img 
-              src="../../img/REIL-Logo.png"
-              class="companyimg">
+              <a class="companylink" href="www.reilcap.com">
+                <img 
+                src="../../img/REIL-Logo.png"
+                class="companyimg">
+              </a>
             </div>
           </div>
         </paper-slide>
@@ -163,9 +170,11 @@
               <div class="author">
                 Lexie Ernst (Co-Founder, <a class="companylink" href="https://companionapp.io/">Companion</a>)
               </div>
-              <img 
-              src="../../img/companion.png"
-              class="companyimg noheight">
+              <a class="companylink" href="https://companionapp.io/">
+                <img 
+                src="../../img/companion.png"
+                class="companyimg noheight">
+              </a>
             </div>
           </div>
         </paper-slide>
