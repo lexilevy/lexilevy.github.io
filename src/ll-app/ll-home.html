@@ -6,59 +6,137 @@
       :host {
 
       }
+
+      div.container{
+        width: 75vw;
+        height: 75vh;
+        margin: 5vh 0;
+        margin-left: 12.5vw;
+      }
+
+      l2t-paper-slider.custom{
+        --paper-slide-height: 75vh;
+        --paper-slide-dot: var(--ll-light-border);
+        --paper-slide-dot-selected: var(--ll-light-blue);
+      }
+
+      paper-slide.slide{
+        text-align: center;
+      }
+
+      div.quote{
+        font-family: IBMLight;
+        width: 100%;
+        white-space: normal;
+        font-size: 1.25em;
+        text-align: left;
+      }
+
+      span.quotation{
+        font-family: IBMBoldItalic;
+      }
+
+      div.author{
+        font-family: IBMBold;
+        width: 100%;
+        white-space: normal;
+        font-size: 1em;
+        margin-top: 2.5vh;
+      }
+
+      a.companylink{
+        text-decoration: none;
+        color: var(--ll-light-blue);
+      }
+
+      img.companyimg{
+        height: 20vh;
+        margin-top: 5vh;
+        max-width: 25vw;
+      }
+
+      img.noheight{
+        height: auto;
+      }
+
+      /*Responsive Styles*/
+      @media screen and (max-width : 760px){
+        l2t-paper-slider.custom{
+          --paper-slide-height: 75vh;
+          --paper-slide-dot: transparent;
+          --paper-slide-dot-selected: transparent;
+        }
+        img.companyimg{
+          max-width: none;
+        }
+
+        img.noheight{
+          height: auto;
+          max-width: 50vw;
+        }
+
+        div.quote{
+          font-size: 1em;
+        }
+
+        div.author{
+          font-size: .85em;
+        }
+      }
     </style>
-    <div class="main">
-      <section>
-        <div><p>Dreamcatcher american apparel typewriter polaroid, Pinterest hoodie tousled vegan pickled gastropub iPhone VHS sartorial. Fanny pack vinyl fingerstache whatever, raw denim Carles literally next level fashion axe photo booth pour-over Echo Park.</p></div>
-      </section>
-      <section>
-        <div><p>Raw denim selvage typewriter, thundercats viral craft beer beard keffiyeh meh. 3 wolf moon american apparel mlkshk street art single-origin coffee. Semiotics art party tote bag, wayfarers banh mi messenger bag Odd Future seitan photo booth. Twee vinyl fingerstache, freegan narwhal semiotics irony sustainable vegan 3 wolf moon ethnic selfies fixie kale chips. Odd Future chillwave twee Tonx kale chips, quinoa disrupt selfies art party Williamsburg Vice. Asymmetrical narwhal Godard, artisan single-origin coffee Bushwick hashtag semiotics literally disrupt pork belly trust fund fashion axe typewriter +1. Master cleanse raw denim trust fund bitters, gluten-free farm-to-table tousled plaid biodiesel actually pork belly roof party polaroid.</p></div>
-      </section>
-      <section>
-        <div><p>Cardigan gluten-free photo booth pug, occupy ethnic bicycle rights disrupt ennui jean shorts art party raw denim Carles Tonx artisan. Freegan aesthetic skateboard, forage iPhone ugh umami tumblr McSweeney's chillwave biodiesel vinyl pitchfork gentrify asymmetrical. Sartorial synth wayfarers, freegan pork belly post-ironic ennui salvia direct trade shoreditch Wes Anderson pitchfork. Mumblecore Truffaut american apparel, Austin single-origin coffee post-ironic tofu retro Vice fanny pack narwhal Neutra skateboard 90's. Kogi sartorial post-ironic gentrify helvetica McSweeney's Schlitz, mustache 8-bit polaroid hella flexitarian viral kale chips tote bag. Banh mi PBR typewriter Banksy. Beard messenger bag deep v, keffiyeh lo-fi umami four loko vinyl lomo hoodie wolf banh mi.</p></div>
-      </section>
-      <section>
-        <div><p>Raw denim selvage typewriter, thundercats viral craft beer beard keffiyeh meh. 3 wolf moon american apparel mlkshk street art single-origin coffee. Semiotics art party tote bag, wayfarers banh mi messenger bag Odd Future seitan photo booth. Twee vinyl fingerstache, freegan narwhal semiotics irony sustainable vegan 3 wolf moon ethnic selfies fixie kale chips. Odd Future chillwave twee Tonx kale chips, quinoa disrupt selfies art party Williamsburg Vice. Asymmetrical narwhal Godard, artisan single-origin coffee Bushwick hashtag semiotics literally disrupt pork belly trust fund fashion axe typewriter +1. Master cleanse raw denim trust fund bitters, gluten-free farm-to-table tousled plaid biodiesel actually pork belly roof party polaroid.</p></div>
-      </section>
-      <section>
-        <div><p>Raw denim selvage typewriter, thundercats viral craft beer beard keffiyeh meh. 3 wolf moon american apparel mlkshk street art single-origin coffee. Semiotics art party tote bag, wayfarers banh mi messenger bag Odd Future seitan photo booth. Twee vinyl fingerstache, freegan narwhal semiotics irony sustainable vegan 3 wolf moon ethnic selfies fixie kale chips. Odd Future chillwave twee Tonx kale chips, quinoa disrupt selfies art party Williamsburg Vice. Asymmetrical narwhal Godard, artisan single-origin coffee Bushwick hashtag semiotics literally disrupt pork belly trust fund fashion axe typewriter +1. Master cleanse raw denim trust fund bitters, gluten-free farm-to-table tousled plaid biodiesel actually pork belly roof party polaroid.</p></div>
-      </section>
-      <section>
-        <div><p>Raw denim selvage typewriter, thundercats viral craft beer beard keffiyeh meh. 3 wolf moon american apparel mlkshk street art single-origin coffee. Semiotics art party tote bag, wayfarers banh mi messenger bag Odd Future seitan photo booth. Twee vinyl fingerstache, freegan narwhal semiotics irony sustainable vegan 3 wolf moon ethnic selfies fixie kale chips. Odd Future chillwave twee Tonx kale chips, quinoa disrupt selfies art party Williamsburg Vice. Asymmetrical narwhal Godard, artisan single-origin coffee Bushwick hashtag semiotics literally disrupt pork belly trust fund fashion axe typewriter +1. Master cleanse raw denim trust fund bitters, gluten-free farm-to-table tousled plaid biodiesel actually pork belly roof party polaroid.</p></div>
-      </section>
-      <section>
-        <div><p>Raw denim selvage typewriter, thundercats viral craft beer beard keffiyeh meh. 3 wolf moon american apparel mlkshk street art single-origin coffee. Semiotics art party tote bag, wayfarers banh mi messenger bag Odd Future seitan photo booth. Twee vinyl fingerstache, freegan narwhal semiotics irony sustainable vegan 3 wolf moon ethnic selfies fixie kale chips. Odd Future chillwave twee Tonx kale chips, quinoa disrupt selfies art party Williamsburg Vice. Asymmetrical narwhal Godard, artisan single-origin coffee Bushwick hashtag semiotics literally disrupt pork belly trust fund fashion axe typewriter +1. Master cleanse raw denim trust fund bitters, gluten-free farm-to-table tousled plaid biodiesel actually pork belly roof party polaroid.</p></div>
-      </section>
-      <section>
-        <div><p>Raw denim selvage typewriter, thundercats viral craft beer beard keffiyeh meh. 3 wolf moon american apparel mlkshk street art single-origin coffee. Semiotics art party tote bag, wayfarers banh mi messenger bag Odd Future seitan photo booth. Twee vinyl fingerstache, freegan narwhal semiotics irony sustainable vegan 3 wolf moon ethnic selfies fixie kale chips. Odd Future chillwave twee Tonx kale chips, quinoa disrupt selfies art party Williamsburg Vice. Asymmetrical narwhal Godard, artisan single-origin coffee Bushwick hashtag semiotics literally disrupt pork belly trust fund fashion axe typewriter +1. Master cleanse raw denim trust fund bitters, gluten-free farm-to-table tousled plaid biodiesel actually pork belly roof party polaroid.</p></div>
-      </section>
-      <section>
-        <div><p>Raw denim selvage typewriter, thundercats viral craft beer beard keffiyeh meh. 3 wolf moon american apparel mlkshk street art single-origin coffee. Semiotics art party tote bag, wayfarers banh mi messenger bag Odd Future seitan photo booth. Twee vinyl fingerstache, freegan narwhal semiotics irony sustainable vegan 3 wolf moon ethnic selfies fixie kale chips. Odd Future chillwave twee Tonx kale chips, quinoa disrupt selfies art party Williamsburg Vice. Asymmetrical narwhal Godard, artisan single-origin coffee Bushwick hashtag semiotics literally disrupt pork belly trust fund fashion axe typewriter +1. Master cleanse raw denim trust fund bitters, gluten-free farm-to-table tousled plaid biodiesel actually pork belly roof party polaroid.</p></div>
-      </section>
-      <section>
-        <div><p>Raw denim selvage typewriter, thundercats viral craft beer beard keffiyeh meh. 3 wolf moon american apparel mlkshk street art single-origin coffee. Semiotics art party tote bag, wayfarers banh mi messenger bag Odd Future seitan photo booth. Twee vinyl fingerstache, freegan narwhal semiotics irony sustainable vegan 3 wolf moon ethnic selfies fixie kale chips. Odd Future chillwave twee Tonx kale chips, quinoa disrupt selfies art party Williamsburg Vice. Asymmetrical narwhal Godard, artisan single-origin coffee Bushwick hashtag semiotics literally disrupt pork belly trust fund fashion axe typewriter +1. Master cleanse raw denim trust fund bitters, gluten-free farm-to-table tousled plaid biodiesel actually pork belly roof party polaroid.</p></div>
-      </section>
-      <section>
-        <div><p>Raw denim selvage typewriter, thundercats viral craft beer beard keffiyeh meh. 3 wolf moon american apparel mlkshk street art single-origin coffee. Semiotics art party tote bag, wayfarers banh mi messenger bag Odd Future seitan photo booth. Twee vinyl fingerstache, freegan narwhal semiotics irony sustainable vegan 3 wolf moon ethnic selfies fixie kale chips. Odd Future chillwave twee Tonx kale chips, quinoa disrupt selfies art party Williamsburg Vice. Asymmetrical narwhal Godard, artisan single-origin coffee Bushwick hashtag semiotics literally disrupt pork belly trust fund fashion axe typewriter +1. Master cleanse raw denim trust fund bitters, gluten-free farm-to-table tousled plaid biodiesel actually pork belly roof party polaroid.</p></div>
-      </section>
-      <section>
-        <div><p>Raw denim selvage typewriter, thundercats viral craft beer beard keffiyeh meh. 3 wolf moon american apparel mlkshk street art single-origin coffee. Semiotics art party tote bag, wayfarers banh mi messenger bag Odd Future seitan photo booth. Twee vinyl fingerstache, freegan narwhal semiotics irony sustainable vegan 3 wolf moon ethnic selfies fixie kale chips. Odd Future chillwave twee Tonx kale chips, quinoa disrupt selfies art party Williamsburg Vice. Asymmetrical narwhal Godard, artisan single-origin coffee Bushwick hashtag semiotics literally disrupt pork belly trust fund fashion axe typewriter +1. Master cleanse raw denim trust fund bitters, gluten-free farm-to-table tousled plaid biodiesel actually pork belly roof party polaroid.</p></div>
-      </section>
-      <section>
-        <div><p>Raw denim selvage typewriter, thundercats viral craft beer beard keffiyeh meh. 3 wolf moon american apparel mlkshk street art single-origin coffee. Semiotics art party tote bag, wayfarers banh mi messenger bag Odd Future seitan photo booth. Twee vinyl fingerstache, freegan narwhal semiotics irony sustainable vegan 3 wolf moon ethnic selfies fixie kale chips. Odd Future chillwave twee Tonx kale chips, quinoa disrupt selfies art party Williamsburg Vice. Asymmetrical narwhal Godard, artisan single-origin coffee Bushwick hashtag semiotics literally disrupt pork belly trust fund fashion axe typewriter +1. Master cleanse raw denim trust fund bitters, gluten-free farm-to-table tousled plaid biodiesel actually pork belly roof party polaroid.</p></div>
-      </section>
-      <section>
-        <div><p>Raw denim selvage typewriter, thundercats viral craft beer beard keffiyeh meh. 3 wolf moon american apparel mlkshk street art single-origin coffee. Semiotics art party tote bag, wayfarers banh mi messenger bag Odd Future seitan photo booth. Twee vinyl fingerstache, freegan narwhal semiotics irony sustainable vegan 3 wolf moon ethnic selfies fixie kale chips. Odd Future chillwave twee Tonx kale chips, quinoa disrupt selfies art party Williamsburg Vice. Asymmetrical narwhal Godard, artisan single-origin coffee Bushwick hashtag semiotics literally disrupt pork belly trust fund fashion axe typewriter +1. Master cleanse raw denim trust fund bitters, gluten-free farm-to-table tousled plaid biodiesel actually pork belly roof party polaroid.</p></div>
-      </section>
-      <section>
-        <div><p>Raw denim selvage typewriter, thundercats viral craft beer beard keffiyeh meh. 3 wolf moon american apparel mlkshk street art single-origin coffee. Semiotics art party tote bag, wayfarers banh mi messenger bag Odd Future seitan photo booth. Twee vinyl fingerstache, freegan narwhal semiotics irony sustainable vegan 3 wolf moon ethnic selfies fixie kale chips. Odd Future chillwave twee Tonx kale chips, quinoa disrupt selfies art party Williamsburg Vice. Asymmetrical narwhal Godard, artisan single-origin coffee Bushwick hashtag semiotics literally disrupt pork belly trust fund fashion axe typewriter +1. Master cleanse raw denim trust fund bitters, gluten-free farm-to-table tousled plaid biodiesel actually pork belly roof party polaroid.</p></div>
-      </section>
+
+    <div class="container">
+
+      <l2t-paper-slider auto-progress slide-duration="15" class="custom" total-slides="3">
+        
+        <paper-slide class="slide">
+          <div class="quote">
+            <span class="quotation">"</span>
+            I was thrilled to have been introduced to Lexi Levy at L Squared Social when I inquired with a friend about needing assistance with social media. When I met with Lexi, I explained how in the past I was trying to reach potential donors, share our foundation's mission, and upcoming events through social media, but I kept falling short! Immediately Lexi understood my needs and set up my Instagram, Twitter, and LinkedIn pages as well as organized my foundation's Facebook page. She wrote and published original content across all of the social media platforms and I began to see instant results! Lexi guided me through the entire process and together we made an impact!
+            <span class="quotation">"</span>
+          </div>
+          <div class="author">
+            Terrie Magro (Co-Founder, <a class="companylink" href="www.michaelmagrofoundation.com">The Michael Magro Foundation</a>)
+          </div>
+          <img 
+          src="../../img/michael_margo.png"
+          class="companyimg">
+        </paper-slide>
+
+        <paper-slide class="slide">
+          <div class="quote">
+            <span class="quotation">"</span>
+            I was thrilled to have been introduced to Lexi Levy at L Squared Social when I inquired with a friend about needing assistance with social media. When I met with Lexi, I explained how in the past I was trying to reach potential donors, share our foundation's mission, and upcoming events through social media, but I kept falling short! Immediately Lexi understood my needs and set up my Instagram, Twitter, and LinkedIn pages as well as organized my foundation's Facebook page. She wrote and published original content across all of the social media platforms and I began to see instant results! Lexi guided me through the entire process and together we made an impact!
+            <span class="quotation">"</span>
+          </div>
+          <div class="author">
+            Evan Samlin (Director of Operations, <a class="companylink" href="www.reilcap.com">REIL Capital</a>)
+          </div>
+          <img 
+          src="../../img/REIL-Logo.png"
+          class="companyimg">
+        </paper-slide>
+
+         <paper-slide class="slide">
+          <div class="quote">
+            <span class="quotation">"</span>
+            Working with L Squared Social for the past year has been an incredible experience for both me and my entire team! Not only does Lexi have an in-depth understanding of the social media landscape, but she brings creative ideas and impressive strategies to the table, while maintaining a friendly and motivating presence. Companion would not be where it is today without Lexi!
+            <span class="quotation">"</span>
+          </div>
+          <div class="author">
+            Lexie Ernst (Co-Founder, <a class="companylink" href="https://companionapp.io/">Companion</a>)
+          </div>
+          <img 
+          src="../../img/companion.png"
+          class="companyimg noheight">
+        </paper-slide>
+      </l2t-paper-slider>
     </div>
 
     <ll-footer
     name="ll-footer">
     </ll-footer>
-    
+
   </template>
 
   <script>
