@@ -8,10 +8,10 @@
       }
 
       div.container{
-        width: 75vw;
+        width: 95vw;
         height: 75vh;
         margin: 5vh 0;
-        margin-left: 12.5vw;
+        margin-left: 2.5vw;
       }
 
       l2t-paper-slider.custom{
@@ -89,11 +89,12 @@
         }
         l2t-paper-slider.custom{
           --paper-slide-height: 50vh;
-          --paper-slide-dot: transparent;
-          --paper-slide-dot-selected: transparent;
+         /* --paper-slide-dot: transparent;
+          --paper-slide-dot-selected: transparent;*/
         }
         img.companyimg{
           max-width: none;
+          height: 15vh;
         }
 
         img.noheight{
@@ -117,7 +118,7 @@
 
     <div class="container">
       <div class="title">What Our Clients Say...</div>
-      <l2t-paper-slider auto-progress disable-swipe slide-duration="10" class="custom" total-slides="3">
+      <l2t-paper-slider auto-progress slide-duration="10" class="custom" total-slides="3">
         
         <paper-slide class="slide">
           <div class="slidecontainer">
