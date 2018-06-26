@@ -15,9 +15,12 @@
       }
 
       l2t-paper-slider.custom{
-        --paper-slide-height: 75vh;
+        --paper-slide-height: 65vh;
         --paper-slide-dot: var(--ll-light-border);
         --paper-slide-dot-selected: var(--ll-light-blue);
+        --paper-slider-dot-container-styles:{
+          bottom:0%;
+        };
       }
 
       paper-slide.slide{
@@ -26,10 +29,12 @@
 
       div.quote{
         font-family: IBMLight;
-        width: 100%;
+        width: 75%;
+        margin-left: 12.5%;
         white-space: normal;
-        font-size: 1.25em;
-        text-align: left;
+        font-size: 1em;
+        line-height: 1.5em;
+        text-align: justify;
       }
 
       span.quotation{
@@ -40,7 +45,7 @@
         font-family: IBMBold;
         width: 100%;
         white-space: normal;
-        font-size: 1em;
+        font-size: .85em;
         margin-top: 2.5vh;
       }
 
@@ -50,8 +55,8 @@
       }
 
       img.companyimg{
-        height: 20vh;
-        margin-top: 5vh;
+        height: 17.5vh;
+        margin-top: 2.5vh;
         max-width: 25vw;
       }
 
@@ -59,10 +64,27 @@
         height: auto;
       }
 
+      div.slidecontainer{
+        width: 100%;
+        height: 100%;
+        display: table;
+      }
+
+      div.slidecontentcontainer{
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      div.title{
+        text-align: center;
+        font-family: IBMBold;
+        font-size: 2em;
+      }
+
       /*Responsive Styles*/
       @media screen and (max-width : 760px){
         l2t-paper-slider.custom{
-          --paper-slide-height: 75vh;
+          --paper-slide-height: 60vh;
           --paper-slide-dot: transparent;
           --paper-slide-dot-selected: transparent;
         }
@@ -86,49 +108,61 @@
     </style>
 
     <div class="container">
-
+      <div class="title">What Our Clients Say...</div>
       <l2t-paper-slider auto-progress slide-duration="15" class="custom" total-slides="3">
         
         <paper-slide class="slide">
-          <div class="quote">
-            <span class="quotation">"</span>
-            I was thrilled to have been introduced to Lexi Levy at L Squared Social when I inquired with a friend about needing assistance with social media. When I met with Lexi, I explained how in the past I was trying to reach potential donors, share our foundation's mission, and upcoming events through social media, but I kept falling short! Immediately Lexi understood my needs and set up my Instagram, Twitter, and LinkedIn pages as well as organized my foundation's Facebook page. She wrote and published original content across all of the social media platforms and I began to see instant results! Lexi guided me through the entire process and together we made an impact!
-            <span class="quotation">"</span>
+          <div class="slidecontainer">
+            <div class="slidecontentcontainer">
+              <div class="quote">
+                <span class="quotation">"</span>
+                I was thrilled to have been introduced to Lexi Levy at L Squared Social when I inquired with a friend about needing assistance with social media. When I met with Lexi, I explained how in the past I was trying to reach potential donors, share our foundation's mission, and upcoming events through social media, but I kept falling short! Immediately Lexi understood my needs and set up my Instagram, Twitter, and LinkedIn pages as well as organized my foundation's Facebook page. She wrote and published original content across all of the social media platforms and I began to see instant results! Lexi guided me through the entire process and together we made an impact!
+                <span class="quotation">"</span>
+              </div>
+              <div class="author">
+                Terrie Magro (Co-Founder, <a class="companylink" href="www.michaelmagrofoundation.com">The Michael Magro Foundation</a>)
+              </div>
+              <img 
+              src="../../img/michael_margo.png"
+              class="companyimg">
+            </div>
           </div>
-          <div class="author">
-            Terrie Magro (Co-Founder, <a class="companylink" href="www.michaelmagrofoundation.com">The Michael Magro Foundation</a>)
-          </div>
-          <img 
-          src="../../img/michael_margo.png"
-          class="companyimg">
         </paper-slide>
 
         <paper-slide class="slide">
-          <div class="quote">
-            <span class="quotation">"</span>
-            I was thrilled to have been introduced to Lexi Levy at L Squared Social when I inquired with a friend about needing assistance with social media. When I met with Lexi, I explained how in the past I was trying to reach potential donors, share our foundation's mission, and upcoming events through social media, but I kept falling short! Immediately Lexi understood my needs and set up my Instagram, Twitter, and LinkedIn pages as well as organized my foundation's Facebook page. She wrote and published original content across all of the social media platforms and I began to see instant results! Lexi guided me through the entire process and together we made an impact!
-            <span class="quotation">"</span>
+          <div class="slidecontainer">
+            <div class="slidecontentcontainer">
+              <div class="quote">
+                <span class="quotation">"</span>
+                I was thrilled to have been introduced to Lexi Levy at L Squared Social when I inquired with a friend about needing assistance with social media. When I met with Lexi, I explained how in the past I was trying to reach potential donors, share our foundation's mission, and upcoming events through social media, but I kept falling short! Immediately Lexi understood my needs and set up my Instagram, Twitter, and LinkedIn pages as well as organized my foundation's Facebook page. She wrote and published original content across all of the social media platforms and I began to see instant results! Lexi guided me through the entire process and together we made an impact!
+                <span class="quotation">"</span>
+              </div>
+              <div class="author">
+                Evan Samlin (Director of Operations, <a class="companylink" href="www.reilcap.com">REIL Capital</a>)
+              </div>
+              <img 
+              src="../../img/REIL-Logo.png"
+              class="companyimg">
+            </div>
           </div>
-          <div class="author">
-            Evan Samlin (Director of Operations, <a class="companylink" href="www.reilcap.com">REIL Capital</a>)
-          </div>
-          <img 
-          src="../../img/REIL-Logo.png"
-          class="companyimg">
         </paper-slide>
 
          <paper-slide class="slide">
-          <div class="quote">
-            <span class="quotation">"</span>
-            Working with L Squared Social for the past year has been an incredible experience for both me and my entire team! Not only does Lexi have an in-depth understanding of the social media landscape, but she brings creative ideas and impressive strategies to the table, while maintaining a friendly and motivating presence. Companion would not be where it is today without L Squared Social!
-            <span class="quotation">"</span>
+          <div class="slidecontainer">
+            <div class="slidecontentcontainer">
+              <div class="quote">
+                <span class="quotation">"</span>
+                Working with L Squared Social for the past year has been an incredible experience for both me and my entire team! Not only does Lexi have an in-depth understanding of the social media landscape, but she brings creative ideas and impressive strategies to the table, while maintaining a friendly and motivating presence. Companion would not be where it is today without L Squared Social!
+                <span class="quotation">"</span>
+              </div>
+              <div class="author">
+                Lexie Ernst (Co-Founder, <a class="companylink" href="https://companionapp.io/">Companion</a>)
+              </div>
+              <img 
+              src="../../img/companion.png"
+              class="companyimg noheight">
+            </div>
           </div>
-          <div class="author">
-            Lexie Ernst (Co-Founder, <a class="companylink" href="https://companionapp.io/">Companion</a>)
-          </div>
-          <img 
-          src="../../img/companion.png"
-          class="companyimg noheight">
         </paper-slide>
       </l2t-paper-slider>
     </div>
