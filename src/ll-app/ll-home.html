@@ -82,6 +82,11 @@
         margin-bottom: 2.5vh;
       }
 
+      video.movie{
+        width: 100vw;
+        margin-top: -8vh;
+      }
+
       /*Responsive Styles*/
       @media screen and (max-width : 760px){
         div.container{
@@ -113,12 +118,22 @@
         div.title{
           font-size: 1.5em;
         }
+
+        video.movie{
+          width: auto;
+          height: 100vh;
+        }
+            
       }
 
-      video.movie{
-        width: 100vw;
-        margin-top: -8vh;
+      @media screen and (max-width : 600px){
+        video.movie{
+          width: auto;
+          height: 100vh;
+          margin-left: -50vw;
+        }
       }
+
     </style>
     <div class="videobanner">
       <video class="movie" loop preload autoplay src="../../img/846830854.mp4" type="video/mp4">
