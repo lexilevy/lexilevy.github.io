@@ -230,7 +230,7 @@
         class="logobutton"
         noink>
 
-          <div class="logotext"> 
+          <div class="logotext" id="logodiv" on-tap="_logoTap"> 
             <img 
             src="../../img/logo_notext.png"
             class="logoimg">
@@ -310,6 +310,10 @@
         //     self.loadingText = data;
         // });
 
+      }
+
+      _logoTap(){
+        this.set("page","home")
       }
 
       _selectPage(e){
