@@ -13,6 +13,7 @@
         height: 100%;
         display: table;
         padding: 7.5vh 5vw;
+        padding-bottom: 15vh;
       }
 
       .logoimg{
@@ -87,7 +88,7 @@
       }
     </style>
 
-    <div class="container">
+    <div id="cont" class="container">
       <div class="left">
         <img 
         src="../../img/logo_notext.png"
@@ -154,7 +155,6 @@
         super.ready();
 
         this._addSubscribers();
-
       }
 
       connectedCallback(){
@@ -170,6 +170,10 @@
 
       }
 
+      _IsSafari() {
+        var is_safari = navigator.userAgent.toLowerCase().indexOf('safari/') > -1;
+        return is_safari;
+      }
       
      
     }
