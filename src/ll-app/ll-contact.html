@@ -120,7 +120,7 @@
         border: solid 1px var(--ll-black);
         border-bottom: none;
         border-radius: 0 !important;
-        
+
         transition: all 0.3s ease-in-out;
         -webkit-transition: all 0.3s ease-in-out;
         -moz-transition: all 0.3s ease-in-out;
@@ -230,7 +230,12 @@
       
 
       <textarea name="message" id="message" type="text" placeholder="Message*"></textarea>
-      <input id="submit" type="submit" value="Submit">
+      
+      <paper-button
+      on-tap="_submitForm">
+        Submit
+      </paper-button>
+      <input id="submit" type="submit" value="Submit" style="visibility: hidden;">
       
     </form>
 
@@ -241,7 +246,7 @@
     
 
   </template>
-
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script>
     class LlTContact extends Polymer.Element {
       
@@ -278,12 +283,27 @@
 
       }
 
-      _nextButtonTapped(){
-        this.$.hiddenbutton.click();
-      }
+      _submitForm(){
+        $(function () {
 
-      _prevButtonTapped(){
-        this.$.hiddenbuttonprev.click();
+          $('form').on('submit', function (e) {
+
+            e.preventDefault();
+
+            $.ajax({
+              type: 'post',
+              url: 'send_form_email.php',
+              data: $('form').serialize(),
+              success: function () {
+                alert('form was submitted');
+              }
+            });
+
+          });
+
+        });
+
+        this.$.submit.click();
       }
       
      
