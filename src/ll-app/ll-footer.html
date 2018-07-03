@@ -3,7 +3,7 @@
     <style is="custom-style">
       :host {
         display: block;
-        background-color: var(--ll-light-border);
+        background-color: var(--ll-dark-border);
         width: 100%;
         margin-top: 5vh;
       }
@@ -32,12 +32,25 @@
         display: table-cell;
         vertical-align: middle;
         font-family: IBMBold;
+        text-align: center;
       }
 
       .lefttext{
         font-family: IBMLight;
         line-height: 2em;
         margin-top: 2vh;
+        color: var(--ll-black);
+      }
+
+      .rightbuttons{
+        border-bottom: 1px solid black;
+        padding-bottom: 2vh;
+        width: 20%;
+        margin-left: 40%;
+      }
+
+      .rightbutton{
+        padding-top: 2vh;
       }
 
       paper-button.socialbutton{
@@ -59,6 +72,19 @@
         -o-transition: all 350ms ease;
         transition: all 350ms ease;
       }
+
+      @media screen and (max-width : 600px){
+          .rightbuttons{
+            width: 40%;
+            margin-left: 30%;
+          }
+      }
+
+      a.link{
+        text-transform: none;
+        text-decoration: none;
+        color: var(--ll-black);
+      }
     </style>
 
     <div class="container">
@@ -68,7 +94,7 @@
         class="logoimg">
         <div class="lefttext">
           New York, NY 10016 <br>
-          lexi@lsquaredsocial.com <br>
+          <a class="link" href="mailto:lexi@lsquaredsocial.com">lexi@lsquaredsocial.com</a><br>
           (516) 732-9409<br>
         </div>
       </div>
