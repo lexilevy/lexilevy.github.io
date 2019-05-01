@@ -135,7 +135,7 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
             text-align: center !important;
             line-height: 2em !important;
           }
-          
+
           .title{
             text-align: center !important;
           }
@@ -169,13 +169,15 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
         <div class="textcontainer" id="content">
           <div class="title">Contact Us</div>
           <div class="paneltext">
-            <paper-input name="name"  label="Name"  class="input" always-float-label id="name"></paper-input>
-            <paper-input name="email" label="Email" class="input" always-float-label id="email"></paper-input>
-            <paper-input name="phone" label="Phone" class="input" always-float-label id="phone" allowed-pattern="[0-9]"></paper-input>
-
-            <div>
-              <paper-button class="contact" on-tap="_submitForm">Submit</paper-button>
-            <div>
+            <form>
+              <paper-input name="name"  label="Name"  class="input" always-float-label id="name"  ></paper-input>
+              <paper-input name="email" label="Email" class="input" always-float-label id="email" autocomplete="email"></paper-input>
+              <paper-input name="phone" label="Phone" class="input" always-float-label id="phone" autocomplete="phone"></paper-input>
+              
+              <div>
+                <paper-button class="contact" on-tap="_submitForm">Submit</paper-button>
+              </div>
+            </form>
 
           </div>
         </div>
