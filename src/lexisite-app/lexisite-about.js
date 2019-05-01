@@ -100,6 +100,9 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
           img.image{
             
           }
+          .parallax{
+            display: none;
+          }
         }
 
         .parallax {
