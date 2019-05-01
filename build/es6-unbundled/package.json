@@ -1,0 +1,33 @@
+{
+  "name": "lexisite",
+  "dependencies": {
+    "@polymer/app-layout": "^3.0.2",
+    "@polymer/iron-collapse": "^3.0.1",
+    "@polymer/iron-dropdown": "^3.0.1",
+    "@polymer/iron-icons": "^3.0.1",
+    "@polymer/paper-button": "^3.0.1",
+    "@polymer/paper-dropdown-menu": "^3.0.1",
+    "@polymer/paper-icon-button": "^3.0.2",
+    "@polymer/paper-item": "^3.0.1",
+    "@polymer/paper-listbox": "^3.0.1",
+    "@polymer/paper-scroll-header-panel": "^3.0.1",
+    "@polymer/paper-toolbar": "^3.0.1",
+    "@polymer/polymer": "^3.0.0",
+    "fa-icon-polymer": "github:oliverandrich/fa-icon-polymer",
+    "gh-pages": "^2.0.1"
+  },
+  "devDependencies": {
+    "@polymer/test-fixture": "^4.0.2",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "wct-mocha": "^1.0.0"
+  },
+  "scripts": {
+    "start": "polymer serve",
+    "build": "polymer build",
+    "serve": "npm run start",
+    "test": "polymer test",
+    "deploy": "> .nojekyll && npm run build && gh-pages -d build/es6-unbundled -b master"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/lexisite-app/lexisite-app.js",
+  "sources": [
+    "src/lexisite-app/**",
+    "package.json",
+    "css/**",
+    "js/**",
+    "img/**"
+  ],
+  "extraDependencies": [
+    "manifest.json",
+    "node_modules/@webcomponents/**",
+    "node_modules/web-animations-js/**",
+    "node_modules/@polymer/**",
+    "node_modules/@fortawesome/**",
+    "node_modules/lit-html/**",
+    "node_modules/fa-icon-polymer/fa-icon.js",
+    "node_modules/fa-icon-polymer/fa-icon-css.js",
+    ".nojekyll",
+    "CNAME"
+  ],
+  "moduleResolution": "node",
+  "npm": true,
+  "lint": {
+    "rules": [
+      "polymer-3"
+    ]
+  },
+  "builds": [{
+    "preset": "es6-unbundled"
+  }]
+}

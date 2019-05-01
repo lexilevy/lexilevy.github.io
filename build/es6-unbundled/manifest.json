@@ -1,0 +1,6 @@
+{
+  "name": "lexisite",
+  "short_name": "lexisite",
+  "start_url": "/",
+  "display": "standalone"
+}
