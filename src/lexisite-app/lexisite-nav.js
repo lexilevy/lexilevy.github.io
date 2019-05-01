@@ -1,4 +1,4 @@
-define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_modules/@polymer/app-layout/app-layout.js","../../node_modules/@polymer/app-layout/app-scroll-effects/app-scroll-effects.js","../../node_modules/@polymer/app-layout/app-header/app-header.js","../../node_modules/@polymer/app-layout/app-toolbar/app-toolbar.js","../../node_modules/@polymer/paper-icon-button/paper-icon-button.js","../../node_modules/@polymer/iron-icons/iron-icons.js","../../node_modules/@polymer/paper-button/paper-button.js","../../node_modules/@polymer/iron-dropdown/iron-dropdown.js","../../node_modules/@polymer/paper-listbox/paper-listbox.js","../../node_modules/@polymer/paper-menu-button/paper-menu-button.js"],function(_polymerElement,_appLayout,_appScrollEffects,_appHeader,_appToolbar,_paperIconButton,_ironIcons,_paperButton,_ironDropdown,_paperListbox,_paperMenuButton){"use strict";class LexisiteNav extends _polymerElement.PolymerElement{static get template(){return _polymerElement.html`
+define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_modules/@polymer/app-layout/app-layout.js","../../node_modules/@polymer/app-layout/app-scroll-effects/app-scroll-effects.js","../../node_modules/@polymer/app-layout/app-header/app-header.js","../../node_modules/@polymer/app-layout/app-toolbar/app-toolbar.js","../../node_modules/@polymer/paper-icon-button/paper-icon-button.js","../../node_modules/@polymer/iron-icons/iron-icons.js","../../node_modules/@polymer/paper-button/paper-button.js","../../node_modules/@polymer/iron-dropdown/iron-dropdown.js","../../node_modules/@polymer/paper-listbox/paper-listbox.js","../../node_modules/@polymer/paper-menu-button/paper-menu-button.js","../../node_modules/@polymer/app-layout/app-drawer/app-drawer.js"],function(_polymerElement,_appLayout,_appScrollEffects,_appHeader,_appToolbar,_paperIconButton,_ironIcons,_paperButton,_ironDropdown,_paperListbox,_paperMenuButton,_appDrawer){"use strict";class LexisiteNav extends _polymerElement.PolymerElement{static get template(){return _polymerElement.html`
       <style>
 
       
@@ -170,8 +170,35 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
           background: transparent;
         }
 
+        app-drawer.appdrawer{
+          z-index: 1;
+          --app-drawer-width: 100vw;
+          --app-drawer-scrim-background: var(--ll-white);
+          --app-drawer-content-container:{
+            background: var(--ll-white);
+          };
+        }
+
+        div.drawerdiv{
+          width: 100%;
+          margin-top: 16vh;
+          height: calc(100% - 16vh);
+          text-align: center;
+        }
+
       }
       </style>
+
+    <app-drawer 
+    id="drawer" 
+    disableSwipe
+    class="appdrawer">
+      <div class="drawerdiv">
+          <paper-button class="dropdownbutton" on-tap="_goto" value="about">About Us</paper-button>
+          <paper-button class="dropdownbutton" on-tap="_goto" value="services">Services</paper-button>
+          <paper-button class="dropdownbutton" on-tap="_goto" value="contact">Contact</paper-button>
+      </div>
+    </app-drawer>
 
       <div id="navbar" class$="navbarexpanded-[[expanded]]">
         <div class="logocontainer" id="logo"> 
@@ -188,27 +215,8 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
             </template>
             <template is="dom-if" if="[[mobile]]">
 
-              <paper-menu-button
-              horizontalAlign="left"
-              verticalAlign="bottom"
-              dynamicAlign="true"
-              no-overlap="true">
-                <!-- <template is="dom-if" if="[[!dropdownexpanded]]"> -->
-                  <paper-icon-button slot="dropdown-trigger" icon="menu" on-tap="_menuClicked" alt="menu">
-                  </paper-icon-button>
-                <!-- </template> -->
-                <!-- <template is="dom-if" if="[[dropdownexpanded]]">
-                  <paper-icon-button slot="dropdown-trigger" icon="close" on-tap="_menuClicked" alt="menu">
-                  </paper-icon-button>
-                </template> -->
-                <paper-listbox slot="dropdown-content" class="listbox">
-                  <paper-button class="dropdownbutton" on-tap="_goto" value="about">About Us</paper-button>
-                  <paper-button class="dropdownbutton" on-tap="_goto" value="services">Services</paper-button>
-                  <paper-button class="dropdownbutton" on-tap="_goto" value="contact">Contact</paper-button>
-                </paper-listbox>
-              </paper-menu-button>
-
-
+              <paper-icon-button slot="dropdown-trigger" icon="menu" on-tap="_toggleDrawer" alt="menu">
+              </paper-icon-button>
             </template>
           </div>
           </div>
@@ -216,4 +224,4 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
 
       
 
-    `}static get properties(){return{mobile:{notfiy:!0},expanded:{notfiy:!0}}}ready(){super.ready();this._addScrollListener();this.set("expanded",!0);this.set("dropdownexpanded",!1);var w=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;w=760>w?!0:!1;if(w){this.set("expanded",!1)}}_addScrollListener(){var self=this;self._resizeWindowFunction();window.onresize=function(){self._resizeWindowFunction()};self._scrollFunction();window.onscroll=function(){self._scrollFunction()}}_resizeWindowFunction(){var w=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;w=760>w?!0:!1;this.set("mobile",w);if(w){this.set("expanded",!1)}}_scrollFunction(){var self=this;if(this.mobile){return}if(80<document.body.scrollTop||80<document.documentElement.scrollTop){self.set("expanded",!1)}else{self.set("expanded",!0)}}_menuClicked(){if(this.dropdownexpanded){this.set("dropdownexpanded",!1)}else{this.set("dropdownexpanded",!0)}}_goto(e){var value=e.target.getAttribute("value");$.publish("_goto",value)}}window.customElements.define("lexisite-nav",LexisiteNav)});
+    `}static get properties(){return{mobile:{notfiy:!0},expanded:{notfiy:!0}}}ready(){super.ready();this._addScrollListener();this.set("expanded",!0);this.set("dropdownexpanded",!1);var w=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;w=760>w?!0:!1;if(w){this.set("expanded",!1)}}_addScrollListener(){var self=this;self._resizeWindowFunction();window.onresize=function(){self._resizeWindowFunction()};self._scrollFunction();window.onscroll=function(){self._scrollFunction()}}_resizeWindowFunction(){var w=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;w=760>w?!0:!1;this.set("mobile",w);if(w){this.set("expanded",!1)}}_scrollFunction(){var self=this;if(this.mobile){return}if(80<document.body.scrollTop||80<document.documentElement.scrollTop){self.set("expanded",!1)}else{self.set("expanded",!0)}}_menuClicked(){if(this.dropdownexpanded){this.set("dropdownexpanded",!1)}else{this.set("dropdownexpanded",!0)}}_goto(e){if(this.mobile){this.$.drawer.close()}var value=e.target.getAttribute("value");$.publish("_goto",value)}_toggleDrawer(){this.$.drawer.toggle()}}window.customElements.define("lexisite-nav",LexisiteNav)});

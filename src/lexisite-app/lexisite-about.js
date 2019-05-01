@@ -159,7 +159,7 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
             front of the ideal crowd.
 
             <div>
-              <paper-button class="contact">Contact Us</paper-button>
+              <paper-button class="contact" on-tap="_goto" value="contact">Contact Us</paper-button>
             <div>
 
           </div>
@@ -168,4 +168,4 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
       </div>
       
       
-    `}static get properties(){return{}}_findPos(obj){var curtop=0;if(obj.offsetParent){do{curtop+=obj.offsetTop}while(obj=obj.offsetParent);if(this.mobile){curtop-=100}return[curtop]}}ready(){super.ready();var self=this,w=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;w=760>w?!0:!1;this.set("mobile",w);$.subscribe("_goto",function(event,data){if("about"==data){window.scroll(0,self._findPos(self.$.content))}})}}window.customElements.define("lexisite-about",LexisiteAbout)});
+    `}static get properties(){return{}}_findPos(obj){var curtop=0;if(obj.offsetParent){do{curtop+=obj.offsetTop}while(obj=obj.offsetParent);if(this.mobile){curtop-=100}return[curtop]}}ready(){super.ready();var self=this,w=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;w=760>w?!0:!1;this.set("mobile",w);$.subscribe("_goto",function(event,data){if("about"==data){window.scroll(0,self._findPos(self.$.content))}})}_goto(e){var value=e.target.getAttribute("value");$.publish("_goto",value)}}window.customElements.define("lexisite-about",LexisiteAbout)});
