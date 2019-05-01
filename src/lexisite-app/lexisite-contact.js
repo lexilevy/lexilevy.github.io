@@ -54,7 +54,8 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
         paper-input.input{
           width: 50vw;
           display: inline-block;
-
+          text-align: left;
+          
           --primary-text-color                : var(--ll-black);
           --paper-input-container-color       : var(--ll-black);
           --paper-input-container-focus-color : var(--ll-black);
@@ -105,36 +106,6 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
         }
 
 
-        @media screen and (max-width : 760px){
-          .textcontainer{
-            width: calc(100% - 10vw) !important;
-            padding: 0 5vw 2.5vh 5vw!important;
-            margin: 0 !important;
-            text-align: center !important;
-            line-height: 2em !important;
-          }
-          .title{
-            text-align: center !important;
-          }
-          
-          .panel{
-            text-align: center !important;
-            display: block;
-            align-items: initial;
-          }
-          paper-input.input{
-            width: 80vw;
-          }
-
-          paper-button.contact{
-            margin-bottom:5vh;
-          }
-          --paper-input-container-input: {
-            font-size: 1.25em;
-          }
-
-        }
-
         paper-button.contact{
           border: 3px solid var(--ll-black);
           border-radius: 0em;
@@ -155,6 +126,39 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
           color: var(--ll-pink);
         }
 
+
+        @media screen and (max-width : 760px){
+          .textcontainer{
+            width: calc(100% - 10vw) !important;
+            padding: 0 5vw 2.5vh 5vw!important;
+            margin: 0 !important;
+            text-align: center !important;
+            line-height: 2em !important;
+          }
+          
+          .title{
+            text-align: center !important;
+          }
+          
+          .panel{
+            text-align: center !important;
+            display: block;
+            align-items: initial;
+          }
+
+          paper-input.input{
+            width: 80vw;
+          }
+
+          paper-button.contact{
+            margin-bottom: 7.5vh !important;
+            margin-top: 0 !important;
+          }
+          --paper-input-container-input: {
+            font-size: 1.25em;
+          }
+
+        }
 
 
       }

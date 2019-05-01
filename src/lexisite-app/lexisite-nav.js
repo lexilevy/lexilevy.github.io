@@ -159,6 +159,7 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
           font-family: IBMBold;
           text-align: center;
           background: var(--ll-white);
+          font-size: 1.5em;
         }
 
         paper-listbox.listbox{
@@ -192,6 +193,7 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
     <app-drawer 
     id="drawer" 
     disableSwipe
+    align="right"
     class="appdrawer">
       <div class="drawerdiv">
           <paper-button class="dropdownbutton" on-tap="_goto" value="about">About Us</paper-button>
