@@ -122,6 +122,16 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
             display: block;
             align-items: initial;
           }
+          paper-input.input{
+            width: 80vw;
+          }
+
+          paper-button.contact{
+            margin-bottom:5vh;
+          }
+          --paper-input-container-input: {
+            font-size: 1.25em;
+          }
 
         }
 
