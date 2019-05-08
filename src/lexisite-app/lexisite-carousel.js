@@ -264,7 +264,7 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
 
       <div class="outerindust">
         <span class="industry">Retail</span>
-        <span class="industry">Insurance</span>
+        <span class="industry">Lifestyle</span>
         <span class="industry">Fashion</span>
         <span class="industry">Pets</span>
         <span class="industry">Packaged Goods</span>

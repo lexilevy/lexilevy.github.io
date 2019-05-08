@@ -59,7 +59,7 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
         div.textcontainer{
           display: inline-block;
           float: left;
-          line-height: 3em;
+          line-height: 2.5em;
           font-family: IBMRoman;
           font-size: 1.25em;
           width: calc(50% - 20vw);
