@@ -49,7 +49,7 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
           display: inline-block;
           float: left;
           margin: 5vw 2.5vw 5vw 2.5vw;
-          background-image: url(http://127.0.0.1:8081/img/sm-2.jpg);
+          background-image: url("img/sm-2.jpg");
           background-attachment: fixed;
           background-position: center;
           background-repeat: no-repeat;
