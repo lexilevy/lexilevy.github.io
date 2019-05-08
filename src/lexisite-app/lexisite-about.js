@@ -27,33 +27,13 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
           align-items: center;
         }
 
-        <!-- div.imgcontainer{
-          width: 40vw;
-          display: inline-block;
-          float: left;
-          margin: 5vw 5vw 5vw 5vw;
 
-          background-image: url("img/city.jpg");
-          /* Set a specific height */
-          
-
-          /* Create the parallax scrolling effect */
-          background-attachment: fixed;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-        } -->
-
-        div.imgcontainer{
+        .imgcontainer{
           width: 45vw;
           display: inline-block;
           float: left;
           margin: 5vw 2.5vw 5vw 2.5vw;
-          background-image: url("img/sm-2.jpg");
-          background-attachment: fixed;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          border: 1px solid var(--ll-black)
         }
 
         div.textcontainer{
@@ -146,9 +126,11 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
 
       <div class="panel">
 
-        <div class="imgcontainer">
+        <!-- <div class="imgcontainer">
           <img class="image" src="img/lexi_i.png" alt>
-        </div>
+        </div> -->
+        <img class="imgcontainer" src="img/lexi_i.png" alt>
+
         <div class="textcontainer" id="content">
           <div class="title">About Us</div>
           <div class="paneltext">
