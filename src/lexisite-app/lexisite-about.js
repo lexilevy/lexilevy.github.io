@@ -134,7 +134,7 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
         <div class="textcontainer" id="content">
           <div class="title">About Us</div>
           <div class="paneltext">
-            L Squared Social specializes in targeted digital advertising. 
+            L Squared Social specializes in social media marketing. 
             We utilize modern technologies to help you grow your business to its full potential.
             Our specialty is using advanced targeting on all the most popular
             social media platforms, mobile apps and websites to get you exposure in 
