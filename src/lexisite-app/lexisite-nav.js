@@ -9,6 +9,7 @@ import '@polymer/paper-button/paper-button.js';
 import '@polymer/iron-dropdown/iron-dropdown.js';
 import '@polymer/paper-listbox/paper-listbox.js';
 import '@polymer/paper-menu-button/paper-menu-button.js';
+import '@polymer/app-layout/app-drawer/app-drawer.js';
 
 
 /**
@@ -178,6 +179,7 @@ class LexisiteNav extends PolymerElement {
           font-family: IBMBold;
           text-align: center;
           background: var(--ll-white);
+          font-size: 1.5em;
         }
 
         paper-listbox.listbox{
@@ -189,8 +191,36 @@ class LexisiteNav extends PolymerElement {
           background: transparent;
         }
 
+        app-drawer.appdrawer{
+          z-index: 1;
+          --app-drawer-width: 100vw;
+          --app-drawer-scrim-background: var(--ll-white);
+          --app-drawer-content-container:{
+            background: var(--ll-white);
+          };
+        }
+
+        div.drawerdiv{
+          width: 100%;
+          margin-top: 16vh;
+          height: calc(100% - 16vh);
+          text-align: center;
+        }
+
       }
       </style>
+
+    <app-drawer 
+    id="drawer" 
+    disableSwipe
+    align="right"
+    class="appdrawer">
+      <div class="drawerdiv">
+          <paper-button class="dropdownbutton" on-tap="_goto" value="about">About Us</paper-button>
+          <paper-button class="dropdownbutton" on-tap="_goto" value="services">Services</paper-button>
+          <paper-button class="dropdownbutton" on-tap="_goto" value="contact">Contact</paper-button>
+      </div>
+    </app-drawer>
 
       <div id="navbar" class$="navbarexpanded-[[expanded]]">
         <div class="logocontainer" id="logo"> 
@@ -207,27 +237,8 @@ class LexisiteNav extends PolymerElement {
             </template>
             <template is="dom-if" if="[[mobile]]">
 
-              <paper-menu-button
-              horizontalAlign="left"
-              verticalAlign="bottom"
-              dynamicAlign="true"
-              no-overlap="true">
-                <!-- <template is="dom-if" if="[[!dropdownexpanded]]"> -->
-                  <paper-icon-button slot="dropdown-trigger" icon="menu" on-tap="_menuClicked" alt="menu">
-                  </paper-icon-button>
-                <!-- </template> -->
-                <!-- <template is="dom-if" if="[[dropdownexpanded]]">
-                  <paper-icon-button slot="dropdown-trigger" icon="close" on-tap="_menuClicked" alt="menu">
-                  </paper-icon-button>
-                </template> -->
-                <paper-listbox slot="dropdown-content" class="listbox">
-                  <paper-button class="dropdownbutton" on-tap="_goto" value="about">About Us</paper-button>
-                  <paper-button class="dropdownbutton" on-tap="_goto" value="services">Services</paper-button>
-                  <paper-button class="dropdownbutton" on-tap="_goto" value="contact">Contact</paper-button>
-                </paper-listbox>
-              </paper-menu-button>
-
-
+              <paper-icon-button slot="dropdown-trigger" icon="menu" on-tap="_toggleDrawer" alt="menu">
+              </paper-icon-button>
             </template>
           </div>
           </div>
@@ -304,10 +315,17 @@ class LexisiteNav extends PolymerElement {
   }
 
   _goto(e){
+    if(this.mobile){
+      this.$.drawer.close(); 
+    }
+
     var value = e.target.getAttribute("value");
     $.publish("_goto", value);
   }
 
+  _toggleDrawer(){        
+    this.$.drawer.toggle(); 
+  }
 }
 
 window.customElements.define('lexisite-nav', LexisiteNav);

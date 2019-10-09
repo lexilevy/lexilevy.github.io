@@ -27,39 +27,19 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
           align-items: center;
         }
 
-        <!-- div.imgcontainer{
-          width: 40vw;
-          display: inline-block;
-          float: left;
-          margin: 5vw 5vw 5vw 5vw;
 
-          background-image: url("img/city.jpg");
-          /* Set a specific height */
-          
-
-          /* Create the parallax scrolling effect */
-          background-attachment: fixed;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-        } -->
-
-        div.imgcontainer{
+        .imgcontainer{
           width: 45vw;
           display: inline-block;
           float: left;
           margin: 5vw 2.5vw 5vw 2.5vw;
-          background-image: url(http://127.0.0.1:8081/img/sm-2.jpg);
-          background-attachment: fixed;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          border: 1px solid var(--ll-black)
         }
 
         div.textcontainer{
           display: inline-block;
           float: left;
-          line-height: 3em;
+          line-height: 2.5em;
           font-family: IBMRoman;
           font-size: 1.25em;
           width: calc(50% - 20vw);
@@ -99,6 +79,9 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
           }
           img.image{
             
+          }
+          .parallax{
+            display: none;
           }
         }
 
@@ -143,9 +126,11 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
 
       <div class="panel">
 
-        <div class="imgcontainer">
+        <!-- <div class="imgcontainer">
           <img class="image" src="img/lexi_i.png" alt>
-        </div>
+        </div> -->
+        <img class="imgcontainer" src="img/lexi_i.png" alt>
+
         <div class="textcontainer" id="content">
           <div class="title">About Us</div>
           <div class="paneltext">
@@ -156,7 +141,7 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
             front of the ideal crowd.
 
             <div>
-              <paper-button class="contact">Contact Us</paper-button>
+              <paper-button class="contact" on-tap="_goto" value="contact">Contact Us</paper-button>
             <div>
 
           </div>
@@ -165,4 +150,4 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
       </div>
       
       
-    `}static get properties(){return{}}_findPos(obj){var curtop=0;if(obj.offsetParent){do{curtop+=obj.offsetTop}while(obj=obj.offsetParent);if(this.mobile){curtop-=100}return[curtop]}}ready(){super.ready();var self=this,w=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;w=760>w?!0:!1;this.set("mobile",w);$.subscribe("_goto",function(event,data){if("about"==data){window.scroll(0,self._findPos(self.$.content))}})}}window.customElements.define("lexisite-about",LexisiteAbout)});
+    `}static get properties(){return{}}_findPos(obj){var curtop=0;if(obj.offsetParent){do{curtop+=obj.offsetTop}while(obj=obj.offsetParent);if(this.mobile){curtop-=100}return[curtop]}}ready(){super.ready();var self=this,w=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;w=760>w?!0:!1;this.set("mobile",w);$.subscribe("_goto",function(event,data){if("about"==data){window.scroll(0,self._findPos(self.$.content))}})}_goto(e){var value=e.target.getAttribute("value");$.publish("_goto",value)}}window.customElements.define("lexisite-about",LexisiteAbout)});

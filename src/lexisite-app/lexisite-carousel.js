@@ -178,7 +178,7 @@ class LexisiteCarousel extends PolymerElement {
 
         .d {
           transform: rotateY(135deg) translateZ(30vw);
-          background-image: url("img/margo_logo_2.png");
+          background-image: url("img/go_answer.jpg");
         }
         .d-true{
           transform: rotateY(135deg) translateZ(50vw);
@@ -186,7 +186,7 @@ class LexisiteCarousel extends PolymerElement {
 
         .e {
           transform: rotateY(180deg) translateZ(30vw);
-          background-image: url("img/reil_logo_2.png");
+          background-image: url("img/tips_on_trips.jpg");
         } 
         .e-true{
           transform: rotateY(180deg) translateZ(50vw);
@@ -281,7 +281,7 @@ class LexisiteCarousel extends PolymerElement {
 
       <div class="outerindust">
         <span class="industry">Retail</span>
-        <span class="industry">Insurance</span>
+        <span class="industry">Lifestyle</span>
         <span class="industry">Fashion</span>
         <span class="industry">Pets</span>
         <span class="industry">Packaged Goods</span>

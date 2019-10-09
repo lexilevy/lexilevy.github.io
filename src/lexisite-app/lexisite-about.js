@@ -43,39 +43,19 @@ class LexisiteAbout extends PolymerElement {
           align-items: center;
         }
 
-        <!-- div.imgcontainer{
-          width: 40vw;
-          display: inline-block;
-          float: left;
-          margin: 5vw 5vw 5vw 5vw;
 
-          background-image: url("img/city.jpg");
-          /* Set a specific height */
-          
-
-          /* Create the parallax scrolling effect */
-          background-attachment: fixed;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-        } -->
-
-        div.imgcontainer{
+        .imgcontainer{
           width: 45vw;
           display: inline-block;
           float: left;
           margin: 5vw 2.5vw 5vw 2.5vw;
-          background-image: url(http://127.0.0.1:8081/img/sm-2.jpg);
-          background-attachment: fixed;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          border: 1px solid var(--ll-black)
         }
 
         div.textcontainer{
           display: inline-block;
           float: left;
-          line-height: 3em;
+          line-height: 2.5em;
           font-family: IBMRoman;
           font-size: 1.25em;
           width: calc(50% - 20vw);
@@ -115,6 +95,9 @@ class LexisiteAbout extends PolymerElement {
           }
           img.image{
             
+          }
+          .parallax{
+            display: none;
           }
         }
 
@@ -159,9 +142,11 @@ class LexisiteAbout extends PolymerElement {
 
       <div class="panel">
 
-        <div class="imgcontainer">
+        <!-- <div class="imgcontainer">
           <img class="image" src="img/lexi_i.png" alt>
-        </div>
+        </div> -->
+        <img class="imgcontainer" src="img/lexi_i.png" alt>
+
         <div class="textcontainer" id="content">
           <div class="title">About Us</div>
           <div class="paneltext">
@@ -172,7 +157,7 @@ class LexisiteAbout extends PolymerElement {
             front of the ideal crowd.
 
             <div>
-              <paper-button class="contact">Contact Us</paper-button>
+              <paper-button class="contact" on-tap="_goto" value="contact">Contact Us</paper-button>
             <div>
 
           </div>
@@ -219,6 +204,10 @@ class LexisiteAbout extends PolymerElement {
     });
   }
 
+  _goto(e){
+    var value = e.target.getAttribute("value");
+    $.publish("_goto", value);
+  }
 }
 
 window.customElements.define('lexisite-about', LexisiteAbout);

@@ -116,6 +116,9 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
             line-height: 1.5em;
             margin-top: 2.5vh;
           }
+          .parallax{
+            display: none;
+          }
         }
 
         .parallax {

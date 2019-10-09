@@ -133,6 +133,9 @@ class LexisiteServices extends PolymerElement {
             line-height: 1.5em;
             margin-top: 2.5vh;
           }
+          .parallax{
+            display: none;
+          }
         }
 
         .parallax {

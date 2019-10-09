@@ -9,6 +9,8 @@ import '@polymer/paper-button/paper-button.js';
 import '@polymer/paper-input/paper-input.js';
 import '@polymer/iron-dropdown/iron-dropdown.js';
 import 'fa-icon-polymer/fa-icon.js';
+import '@polymer/iron-form/iron-form.js';
+
 /**
  * @customElement
  * @polymer
@@ -71,7 +73,8 @@ class LexisiteContact extends PolymerElement {
         paper-input.input{
           width: 50vw;
           display: inline-block;
-
+          text-align: left;
+          
           --primary-text-color                : var(--ll-black);
           --paper-input-container-color       : var(--ll-black);
           --paper-input-container-focus-color : var(--ll-black);
@@ -122,26 +125,6 @@ class LexisiteContact extends PolymerElement {
         }
 
 
-        @media screen and (max-width : 760px){
-          .textcontainer{
-            width: calc(100% - 10vw) !important;
-            padding: 0 5vw 2.5vh 5vw!important;
-            margin: 0 !important;
-            text-align: center !important;
-            line-height: 2em !important;
-          }
-          .title{
-            text-align: center !important;
-          }
-          
-          .panel{
-            text-align: center !important;
-            display: block;
-            align-items: initial;
-          }
-
-        }
-
         paper-button.contact{
           border: 3px solid var(--ll-black);
           border-radius: 0em;
@@ -163,6 +146,39 @@ class LexisiteContact extends PolymerElement {
         }
 
 
+        @media screen and (max-width : 760px){
+          .textcontainer{
+            width: calc(100% - 10vw) !important;
+            padding: 0 5vw 2.5vh 5vw!important;
+            margin: 0 !important;
+            text-align: center !important;
+            line-height: 2em !important;
+          }
+
+          .title{
+            text-align: center !important;
+          }
+          
+          .panel{
+            text-align: center !important;
+            display: block;
+            align-items: initial;
+          }
+
+          paper-input.input{
+            width: 80vw;
+          }
+
+          paper-button.contact{
+            margin-bottom: 7.5vh !important;
+            margin-top: 0 !important;
+          }
+          --paper-input-container-input: {
+            font-size: 1.25em;
+          }
+
+        }
+
 
       }
       </style>
@@ -172,22 +188,23 @@ class LexisiteContact extends PolymerElement {
         <div class="textcontainer" id="content">
           <div class="title">Contact Us</div>
           <div class="paneltext">
-            <paper-input name="name"  label="Name"  class="input" always-float-label id="name"></paper-input>
-            <paper-input name="email" label="Email" class="input" always-float-label id="email"></paper-input>
-            <paper-input name="phone" label="Phone" class="input" always-float-label id="phone" allowed-pattern="[0-9]"></paper-input>
+            <iron-form id="ironform">
+            <form action="https://formspree.io/lexi@lsquaredsocial.com" method="POST" />
 
-            <div>
-              <paper-button class="contact" on-tap="_submitForm">Submit</paper-button>
-            <div>
+              <paper-input name="name"  label="Name"  class="input" always-float-label id="name"  ></paper-input>
+              <paper-input name="email" label="Email" class="input" always-float-label id="email" autocomplete="email"></paper-input>
+              <paper-input name="phone" label="Phone" class="input" always-float-label id="phone" autocomplete="phone"></paper-input>
+              
+              <div>
+                <paper-button class="contact" on-tap="_submitForm">Submit</paper-button>
+              </div>
+            </form>
+            </iron-form>
 
           </div>
         </div>
 
       </div>
-
-      <form id="form" method="post" name="myemailform" 
-      action="https://mailthis.to/jplatz@umich.edu">
-      </form>
     `;
   }
   static get properties() {
@@ -226,6 +243,7 @@ class LexisiteContact extends PolymerElement {
   }
 
   _submitForm(){
+   // this.$.ironform.submit();
     var name  = this.$.name.value;
     var phone = this.$.phone.value;
     var email = this.$.email.value;
@@ -243,14 +261,49 @@ class LexisiteContact extends PolymerElement {
       return;
     }
     
-    $.post('https://mailthis.to/jplatz@umich.edu', {
-      email: email,
-      phone: phone,
-      name:  name,
+    var destinationEmail = "lexi@lsquaredsocial.com";
+    var form = document.createElement('form');
+    form.setAttribute("action", "https://formspree.io/" + destinationEmail)
+    form.setAttribute("method", "POST")
 
-    }).then(function () {
-      location.href = 'https://mailthis.to/confirm';
-    });
+    // Subject for your email
+    var field = document.createElement("input");
+    field.setAttribute("type", "hidden");
+    field.setAttribute("name", "_subject");
+    field.setAttribute("value", "Contact form submitted");
+    form.appendChild(field);
+
+    // Contact email address        
+    field = document.createElement("input");
+    field.setAttribute("type", "hidden");
+    field.setAttribute("name", "email");
+    field.setAttribute("value", email);
+    form.appendChild(field);
+
+    // Your user's name
+    field = document.createElement("input");              
+    field.setAttribute("type", "hidden");
+    field.setAttribute("name", "name");
+    field.setAttribute("value", name);
+    form.appendChild(field);
+
+    // The text message
+    field = document.createElement("input");              
+    field.setAttribute("type", "hidden");
+    field.setAttribute("name", "message");
+    field.setAttribute("value", phone);
+    form.appendChild(field);
+
+    document.body.appendChild(form);    
+    form.submit();
+    // $.post('https://mailthis.to/jplatz@umich.edu', {
+    //   email: email,
+    //   phone: phone,
+    //   name:  name,
+
+    // }).then(function () {
+    //   location.href = 'https://mailthis.to/confirm';
+    // });
 
   }
 
