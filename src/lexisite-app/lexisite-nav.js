@@ -11,7 +11,7 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
         img.logoimg{
           height: 12.5vh;
           width: calc(12.5vh * 1.15);
-          padding-right: 2vw;
+          padding-right: 1vw;
         }
 
         span.bold{
@@ -81,7 +81,8 @@ define(["../../node_modules/@polymer/polymer/polymer-element.js","../../node_mod
           -ms-animation: fadein 2s; /* Internet Explorer */
           -o-animation: fadein 2s; /* Opera < 12.1 */
           animation: fadein 2s;
-          display: none;
+          height: 5vh;
+          width: auto;
         }
 
         .logotext{
